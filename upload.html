@@ -2,14 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Upload Files</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Upload Documents</title>
 </head>
 <body>
-    <h1>Upload Files</h1>
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <input type="submit" value="Upload">
-    </form>
-    <a href="/">Back to Home</a>
+    <header>
+        <h1>Upload Documents</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="collaborate.html">Collaborate</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Upload Your Documents</h2>
+        <form>
+            <input type="file" id="file-upload" accept=".pdf, .doc, .docx, .txt, .mp4, .jpg, .jpeg, .png" required>
+            <button type="submit">Upload</button>
+        </form>
+        <div id="success-message" class="hidden">
+            <h3>Upload Successful! 😊</h3>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Student Portal</p>
+    </footer>
+    <script>
+        document.querySelector('form').onsubmit = function(event) {
+            event.preventDefault();
+            document.getElementById('success-message').classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>
