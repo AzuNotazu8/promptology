@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Upload</title>
+    <title>Student Resource Hub</title>
     <link rel="stylesheet" href="styles.css">
     <script>
         function showSuccessMessage() {
@@ -12,22 +12,67 @@
                 document.getElementById("success-message").style.display = "none";
             }, 3000); // Hide the message after 3 seconds
         }
+
+        function loadSection(section) {
+            document.querySelectorAll(".content").forEach(div => {
+                div.style.display = "none"; // Hide all sections
+            });
+            document.getElementById(section).style.display = "block"; // Show selected section
+        }
+
+        // Load the home section by default
+        window.onload = function() {
+            loadSection('home');
+        }
     </script>
 </head>
 <body>
     <header>
-        <h1>Document Upload</h1>
+        <h1>Student Resource Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="loadSection('home')">Home</a></li>
+                <li><a href="#" onclick="loadSection('upload')">Upload</a></li>
+                <li><a href="#" onclick="loadSection('download')">Download</a></li>
+                <li><a href="#" onclick="loadSection('chat')">Chat</a></li>
+                <li><a href="#" onclick="loadSection('collaborate')">Collaborate</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
-        <h2>Upload your document</h2>
-        <form id="upload-form" onsubmit="showSuccessMessage(); return false;">
-            <input type="file" id="file-input" required>
-            <button type="submit">Upload</button>
-        </form>
-        <div id="success-message" style="display: none;">
-            <p>Upload Successful! 😊</p>
+        <div id="home" class="content">
+            <h2>Welcome to the Student Resource Hub</h2>
+            <p>Your one-stop destination for uploading and sharing educational resources.</p>
+        </div>
+
+        <div id="upload" class="content" style="display: none;">
+            <h2>Upload your Document</h2>
+            <form id="upload-form" onsubmit="showSuccessMessage(); return false;">
+                <input type="file" id="file-input" required>
+                <button type="submit">Upload</button>
+            </form>
+            <div id="success-message" style="display: none;">
+                <p>Upload Successful! 😊</p>
+            </div>
+        </div>
+
+        <div id="download" class="content" style="display: none;">
+            <h2>Download Documents</h2>
+            <p>No documents available for download yet.</p>
+        </div>
+
+        <div id="chat" class="content" style="display: none;">
+            <h2>Chat Room</h2>
+            <p>Join the discussion!</p>
+        </div>
+
+        <div id="collaborate" class="content" style="display: none;">
+            <h2>Collaborate with Peers</h2>
+            <p>Work together on projects and assignments.</p>
         </div>
     </main>
+
     <footer>
         <p>© 2024 Your Website</p>
     </footer>
