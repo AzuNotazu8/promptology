@@ -2,20 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Chat</title>
 </head>
 <body>
-    <h1>Chat</h1>
-    <form method="POST">
-        <input type="text" name="username" placeholder="Your name">
-        <textarea name="content" placeholder="Your message"></textarea>
-        <input type="submit" value="Send">
-    </form>
-    <ul>
-        {% for message in messages %}
-        <li><strong>{{ message.username }}:</strong> {{ message.content }}</li>
-        {% endfor %}
-    </ul>
-    <a href="/">Back to Home</a>
+    <header>
+        <h1>Chat Room</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="collaborate.html">Collaborate</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Chat with Fellow Students</h2>
+        <form>
+            <input type="text" placeholder="Enter your name" required>
+            <textarea placeholder="Type your message..." required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div class="chat-box">
+            <p><strong>User1:</strong> Hello!</p>
+            <p><strong>User2:</strong> How are you?</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Student Portal</p>
+    </footer>
 </body>
 </html>
