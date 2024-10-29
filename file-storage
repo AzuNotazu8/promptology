@@ -1,0 +1,4 @@
+git clone https://github.com/AzuNotazu8/file-storage.git
+cd file-storage
+npm init -y
+npm install express multer mongoose dotenv
