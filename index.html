@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Student Portal</title>
+    <script>
+        function showSuccessMessage() {
+            document.getElementById("success-message").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("success-message").style.display = "none";
+            }, 3000); // Hide the message after 3 seconds
+        }
+    </script>
 </head>
 <body>
     <header>
-        <h1>Welcome to the Student Portal</h1>
-        <nav>
-            <ul>
-                <li><a href="upload.html">Upload</a></li>
-                <li><a href="download.html">Download</a></li>
-                <li><a href="chat.html">Chat</a></li>
-                <li><a href="collaborate.html">Collaborate</a></li>
-            </ul>
-        </nav>
+        <h1>Document Upload</h1>
     </header>
     <main>
-        <h2>Home</h2>
-        <p>This is the main page of the Student Portal. Use the navigation to explore.</p>
+        <h2>Upload your document</h2>
+        <form id="upload-form" onsubmit="showSuccessMessage(); return false;">
+            <input type="file" id="file-input" required>
+            <button type="submit">Upload</button>
+        </form>
+        <div id="success-message" style="display: none;">
+            <p>Upload Successful! 😊</p>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2024 Student Portal</p>
+        <p>© 2024 Your Website</p>
     </footer>
 </body>
 </html>
