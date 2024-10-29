@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download Files</title>
+</head>
+<body>
+    <h1>Download Files</h1>
+    <ul>
+        {% for document in documents %}
+        <li><a href="{{ url_for('static', filename=document.name) }}">{{ document.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
