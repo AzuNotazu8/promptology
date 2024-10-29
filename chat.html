@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+</head>
+<body>
+    <h1>Chat</h1>
+    <form method="POST">
+        <input type="text" name="username" placeholder="Your name">
+        <textarea name="content" placeholder="Your message"></textarea>
+        <input type="submit" value="Send">
+    </form>
+    <ul>
+        {% for message in messages %}
+        <li><strong>{{ message.username }}:</strong> {{ message.content }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
