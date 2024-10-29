@@ -2,15 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Download Files</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Download Documents</title>
 </head>
 <body>
-    <h1>Download Files</h1>
-    <ul>
-        {% for document in documents %}
-        <li><a href="{{ url_for('static', filename=document.name) }}">{{ document.name }}</a></li>
-        {% endfor %}
-    </ul>
-    <a href="/">Back to Home</a>
+    <header>
+        <h1>Download Documents</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="collaborate.html">Collaborate</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Available Documents for Download</h2>
+        <ul>
+            <li><a href="#">Document 1</a></li>
+            <li><a href="#">Document 2</a></li>
+            <li><a href="#">Document 3</a></li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Student Portal</p>
+    </footer>
 </body>
 </html>
